@@ -1,11 +1,12 @@
-%global commit c3fb309727671130a32b4c19de48ec22c8530aa1
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit 4de13b35d91150eb269bea22820d0e688cd6b643
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global alphatag .%{shortcommit}git
 %global repo_name tripleo-incubator
 
 Name:             openstack-tripleo
-Version: XXX
-Release: XXX
+Version:          0.0.8
+Release:          0.2%{?alphatag}%{?dist}
 Summary:          OpenStack TripleO
 
 License:          ASL 2.0
@@ -92,3 +93,6 @@ cp -r doc/build/html/* %{buildroot}%{_datadir}/doc/tripleo/html
 %{_datadir}/doc/tripleo
 
 %changelog
+* Tue Sep 27 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 0.0.8-0.2.4de13b3git
+- Newton release (4de13b35d91150eb269bea22820d0e688cd6b643)
+
