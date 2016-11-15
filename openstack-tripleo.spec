@@ -6,7 +6,7 @@
 
 Name:             openstack-tripleo
 Version:          0.0.8
-Release:          0.2%{?alphatag}%{?dist}
+Release:          0.3%{?alphatag}%{?dist}
 Summary:          OpenStack TripleO
 
 License:          ASL 2.0
@@ -14,17 +14,16 @@ URL:              https://wiki.openstack.org/wiki/TripleO
 Source0:          https://github.com/openstack/%{repo_name}/archive/%{commit}.tar.gz#/%{repo_name}-%{commit}.tar.gz
 Source1:          tripleo
 
-BuildArch:        noarch
-
-BuildRequires:    python-sphinx
-BuildRequires:    python-oslo-sphinx
-Requires:         jq
-
 #
 # patches_base=c3fb309727671130a32b4c19de48ec22c8530aa1
 #
 Patch0001:             0001-Use-packaged-template-directory-path.patch
 
+BuildArch:        noarch
+
+BuildRequires:    python-sphinx
+BuildRequires:    python-oslo-sphinx
+Requires:         jq
 
 %description
 TripleO is a program aimed at installing, upgrading and operating OpenStack
@@ -93,6 +92,9 @@ cp -r doc/build/html/* %{buildroot}%{_datadir}/doc/tripleo/html
 %{_datadir}/doc/tripleo
 
 %changelog
+* Tue Nov 15 2016 Jon Schlueter <jschluet@redhat.com> 0.0.8-0.3
+- rebuild to include patch
+
 * Tue Sep 27 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 0.0.8-0.2.4de13b3git
 - Newton release (4de13b35d91150eb269bea22820d0e688cd6b643)
 
