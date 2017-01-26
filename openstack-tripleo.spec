@@ -18,6 +18,7 @@ BuildArch:        noarch
 BuildRequires:    python-sphinx
 BuildRequires:    python-oslo-sphinx
 Requires:         jq
+Requires:         libvirt-python
 
 #
 # patches_base=c3fb309727671130a32b4c19de48ec22c8530aa1
