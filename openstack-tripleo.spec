@@ -2,6 +2,10 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global alphatag .%{shortcommit}git
 %global repo_name tripleo-incubator
+%global common_desc \
+TripleO is a program aimed at installing, upgrading and operating OpenStack \
+clouds using OpenStack's own cloud facilities as the foundations - building on \
+nova, neutron and heat to automate fleet management at datacenter scale.
 
 Name:             openstack-tripleo
 Version: XXX
@@ -27,9 +31,7 @@ Patch0001:             0001-Use-packaged-template-directory-path.patch
 
 
 %description
-TripleO is a program aimed at installing, upgrading and operating OpenStack
-clouds using OpenStack's own cloud facilities as the foundations - building on
-nova, neutron and heat to automate fleet management at datacenter scale.
+%{common_desc}
 
 %package doc
 Summary:          Documentation for OpenStack TripleO
@@ -40,9 +42,7 @@ BuildArch:        noarch
 BuildRequires:    python-sphinx
 
 %description    doc
-TripleO is a program aimed at installing, upgrading and operating OpenStack
-clouds using OpenStack's own cloud facilities as the foundations - building on
-nova, neutron and heat to automate fleet management at datacenter scale.
+%{common_desc}
 
 This package contains documentation files for TripleO.
 
